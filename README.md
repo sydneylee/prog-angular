@@ -4,7 +4,9 @@ prog-angular
 path:
 
 style - public/css/site_sass.css
-javascript - public/js/site.js
+javascript - public/js/app.min.js(uglified)
+javascript - public_src/js/app.js (source js)
+Data file public/js/data.json
 main index - views/index.ejs
 
 
