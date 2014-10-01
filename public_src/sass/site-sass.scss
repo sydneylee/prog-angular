@@ -1,0 +1,120 @@
+$font-stack:"Lucida Grande", Helvetica, Arial, sans-serif;
+$font-col:#808080;
+$font-a-col:#00B7FF;
+
+$bar-bg-gr-col:#79b800;
+$bar-bg-bl-col:#0099ff;
+
+@mixin border-radius( $val) {
+	-webkit-border-radius:  $val;
+	-moz-border-radius:  $val;
+	-o-border-radius:  $val;
+	-ms-border-radius:  $val;
+	border-radius:  $val;
+}
+@mixin box-shadow($top, $left, $blur, $color, $inset:"") {
+	-webkit-box-shadow:$top $left $blur $color #{$inset};
+	-moz-box-shadow:$top $left $blur $color #{$inset};
+	box-shadow:$top $left $blur $color #{$inset};
+}
+
+body {
+	padding: 30px;
+	color:$font-col;
+	font: 14px $font-stack;
+}
+.vertical-alignment-helper {
+	display:table;
+	height: 100%;
+	width: 100%;
+}
+.vertical-align-center {
+	/* To center vertically */
+	display: table-cell;
+	vertical-align: middle;
+}
+.modal-content {
+	/* Bootstrap sets the size of the modal in the modal-dialog class, we need to inherit it */
+	width:inherit;
+	height:inherit;
+	/* To center horizontally */
+	margin: 0 auto;
+}
+
+.modal-header{
+	background-color:#808080;
+}
+
+#progressBody{
+	width:100%;
+	text-align:center;
+}
+#progress{
+	width: 70%;
+	margin:20px auto;
+}
+#progressBar{
+	height: 22px;
+	background-color:#fff;
+	border: 1px solid #d8d8d8;
+	@include border-radius(4px);
+}
+#progressInner{
+	height: 100%;
+	color: #fff;
+	text-align: right;
+	line-height: 22px; 
+	width: 0;
+	background-color: $bar-bg-bl-col;
+	/*box-shadow: inset 0 -1px 0 rgba(0,0,0,.15);*/
+	@include box-shadow(0, -1px, 1px, rgba(0, 0, 0, 0.15), inset);
+}
+.bg-bl .progress-bar{
+	background:$bar-bg-bl-col;
+}
+.bg-gr .progress-bar{
+	background:$bar-bg-gr-col;
+}
+
+#progressMessageBox{
+	display:inline-block;
+	width:100%;
+	text-align:center;
+	font-size:1.5em;
+}
+
+.btn-circle{
+	width:30px;
+	height:30px;
+	text-align:center;
+	padding:3px 0;
+	font-size:12px;
+	line-height:1.42;
+	@include border-radius(15px);
+	background-color:#9a9a9a;
+}
+#myModalLabel{
+	color:#d8d8d8;
+	text-shadow:1px 1px 0px #ccc;
+}
+
+@media screen and (max-width:767px){
+	body{
+		padding: 0px;
+	}
+	.modal-dialog{
+		margin-left:0px;
+		margin-right:0px;
+	}
+	#progressBar{
+		margin:2% auto;
+	}
+}
+@media screen and (min-width:768px){
+	#progressBar{
+		margin:10% auto;
+	}
+}
+
+
+
